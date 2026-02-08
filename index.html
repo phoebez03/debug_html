@@ -1,20 +1,40 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Question 1</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Q1 — Find the Incorrect Line</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<p><strong>Click all lines that contain an error:</strong></p>
+<div class="container"
+  data-question="q1"
+  data-correct-lines="3"
+  data-explain-correct='✅ Line 3 starts a <code>&lt;p&gt;</code> element. HTML elements should be properly closed with <code>&lt;/p&gt;</code> so the browser knows where the paragraph ends.'
+  data-explain-incorrect='The error is on line 3: the paragraph begins with <code>&lt;p&gt;</code> but never closes with <code>&lt;/p&gt;</code>. Add <code>&lt;/p&gt;</code> before <code>&lt;/div&gt;</code>.'
+>
+  <h2>Question 1</h2>
+  <p>Click the line(s) that contain an HTML error. Then press <strong>Submit</strong> to check.</p>
 
-<pre id="code">
-  <span>&lt;div class="card"&gt;</span>
-  <span>  &lt;h1&gt;Welcome&lt;/h1&gt;</span>
-  <span>  &lt;p&gt;This is my site</span>
-  <span>&lt;/div&gt;</span>
-</pre>
+  <div class="codebox" role="group" aria-label="Code lines">
+    <div class="line" data-line="1"><div class="ln">1</div><div class="code">&lt;div class="card"&gt;</div></div>
+    <div class="line" data-line="2"><div class="ln">2</div><div class="code">  &lt;h1&gt;Welcome&lt;/h1&gt;</div></div>
+    <div class="line" data-line="3"><div class="ln">3</div><div class="code">  &lt;p&gt;This is my site</div></div>
+    <div class="line" data-line="4"><div class="ln">4</div><div class="code">&lt;/div&gt;</div></div>
+  </div>
 
-<script src="script.js"></script>
+  <div id="decisionFeedback" class="panel" aria-live="polite"></div>
+
+  <div class="actions">
+    <button id="submitBtn" disabled>Submit</button>
+    <button id="retryBtn" type="button">Try Again</button>
+  </div>
+
+  <div id="evalFeedback" class="panel" aria-live="polite"></div>
+</div>
+
+<script src="main.js"></script>
 </body>
 </html>
+
