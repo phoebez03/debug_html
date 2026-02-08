@@ -1,39 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Q2 — Find the Incorrect Line</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="utf-8">
+  <title>Question 2</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container"
-  data-question="q2"
-  data-correct-lines="2"
-  data-explain-correct='✅ <code>&lt;p&gt;</code> cannot contain block-level elements like <code>&lt;h1&gt;</code>. This violates HTML’s content model (structure rule).'
-  data-explain-incorrect='Line 2 is the issue: <code>&lt;h1&gt;</code> is block-level and should not be nested inside <code>&lt;p&gt;</code>. Fix by removing the surrounding <code>&lt;p&gt;</code> or using inline text.'
->
-  <h2>Question 2</h2>
-  <p>Click the line(s) that contain an HTML structure error. Then press <strong>Submit</strong>.</p>
+<div data-correct="2"
+     data-correct-feedback="
+<strong>Correct.</strong><br>
+A &lt;p&gt; element cannot contain block-level elements like &lt;h1&gt;.
+"
+     data-incorrect-feedback="
+<strong>Incorrect.</strong><br>
+Line 2 is invalid because a heading cannot be nested inside a paragraph.
+">
 
-  <div class="codebox" role="group" aria-label="Code lines">
-    <div class="line" data-line="1"><div class="ln">1</div><div class="code">&lt;p&gt;</div></div>
-    <div class="line" data-line="2"><div class="ln">2</div><div class="code">  &lt;h1&gt;Welcome&lt;/h1&gt;</div></div>
-    <div class="line" data-line="3"><div class="ln">3</div><div class="code">&lt;/p&gt;</div></div>
-  </div>
+<h2>Question 2</h2>
+<p>Select the line that contains a structural HTML error.</p>
 
-  <div id="decisionFeedback" class="panel" aria-live="polite"></div>
-
-  <div class="actions">
-    <button id="submitBtn" disabled>Submit</button>
-    <button id="retryBtn" type="button">Try Again</button>
-  </div>
-
-  <div id="evalFeedback" class="panel" aria-live="polite"></div>
+<div class="codebox">
+  <div class="line" data-line="1"><div class="ln">1</div>&lt;p&gt;</div>
+  <div class="line" data-line="2"><div class="ln">2</div>&lt;h1&gt;Title&lt;/h1&gt;</div>
+  <div class="line" data-line="3"><div class="ln">3</div>&lt;/p&gt;</div>
 </div>
 
-<script src="main.js"></script>
+<div id="decision" class="panel">Click a line to select it.</div>
+
+<div class="actions">
+  <button id="submit" disabled>Submit</button>
+</div>
+
+<div id="feedback" class="panel" style="display:none"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
 
