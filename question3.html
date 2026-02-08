@@ -1,39 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Q3 — Find the Incorrect Line</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="utf-8">
+  <title>Question 3</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container"
-  data-question="q3"
-  data-correct-lines="1"
-  data-explain-correct='✅ Attribute values should be wrapped in quotes. The correct syntax is <code>class=&quot;card&quot;</code>.'
-  data-explain-incorrect='Line 1 is incorrect because the class attribute value is missing quotes. Fix by writing <code>&lt;div class=&quot;card&quot;&gt;</code>.'
->
-  <h2>Question 3</h2>
-  <p>Click the line(s) that contain an HTML syntax error. Then press <strong>Submit</strong>.</p>
+<div data-correct="1"
+     data-correct-feedback="
+<strong>Correct.</strong><br>
+Attribute values must be wrapped in quotes, e.g. class=&quot;card&quot;.
+"
+     data-incorrect-feedback="
+<strong>Incorrect.</strong><br>
+Line 1 is missing quotation marks around the class attribute value.
+">
 
-  <div class="codebox" role="group" aria-label="Code lines">
-    <div class="line" data-line="1"><div class="ln">1</div><div class="code">&lt;div class=card&gt;</div></div>
-    <div class="line" data-line="2"><div class="ln">2</div><div class="code">  Content here</div></div>
-    <div class="line" data-line="3"><div class="ln">3</div><div class="code">&lt;/div&gt;</div></div>
-  </div>
+<h2>Question 3</h2>
+<p>Select the line that contains an HTML syntax error.</p>
 
-  <div id="decisionFeedback" class="panel" aria-live="polite"></div>
-
-  <div class="actions">
-    <button id="submitBtn" disabled>Submit</button>
-    <button id="retryBtn" type="button">Try Again</button>
-  </div>
-
-  <div id="evalFeedback" class="panel" aria-live="polite"></div>
+<div class="codebox">
+  <div class="line" data-line="1"><div class="ln">1</div>&lt;div class=card&gt;</div>
+  <div class="line" data-line="2"><div class="ln">2</div>Content</div>
+  <div class="line" data-line="3"><div class="ln">3</div>&lt;/div&gt;</div>
 </div>
 
-<script src="main.js"></script>
+<div id="decision" class="panel">Click a line to select it.</div>
+
+<div class="actions">
+  <button id="submit" disabled>Submit</button>
+</div>
+
+<div id="feedback" class="panel" style="display:none"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
+
 
