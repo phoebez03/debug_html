@@ -6,6 +6,3 @@ lines.forEach(line => {
   });
 });
 
-function submitAnswer() {
-  alert("Your selection has been recorded.\nReturn to the course to submit.");
-}
